@@ -2,7 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from datetime import datetime
 from flask_login import UserMixin
-from . import login_manager
+#from . import login_manager
 
 
 class User(UserMixin,db.Model):
@@ -21,7 +21,7 @@ class Track(db.Model):
     __tablename__ = 'tracks'
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255))
-    expenditure = db.Column(db.Interger)
+    expenditure = db.Column(db.Integer)
 
 class FinanceLiteracy(db.Model):
     __tablename__ = 'financesLiteracy'
@@ -32,11 +32,14 @@ class FinanceLiteracy(db.Model):
 class Notes(db.Model):
     __tablename__ = 'notes'
     id = db.Column(db.Integer,primary_key = True)
-    username = db.Column(db.String(255))
-    notes = db.Column(db.String)
-    time_stamp = db.Column(db.DateTime, default=datetime.utcnow)
-    notes_by = db.Column(db.String(255))
+    id = db.Column(db.Integer, primary_key=True)
+    task = db.Column(db.String(255),nullable=False)
+    date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
+	#create string
 
     def __repr__(self):
-        return f'User {self.username}'
+        return '<Task %r>'%self.id
+	
+
+    
