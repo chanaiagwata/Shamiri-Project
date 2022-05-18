@@ -1,20 +1,24 @@
-{%extends 'bootstrap/base.html'%} {%block styles%}  {{super()}}
-<!--bootstrap cdn link -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--stylessheeets css-->
-<!--<link rel="stylesheet" href= href="{{ url_for('static', filename='css/styles.css') }}">
-<!--google fonts links-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Akshar&family=Kalam&family=Orelega+One&family=Overpass:wght@300&family=Poppins:wght@100;200;500&family=Rubik+Moonrocks&family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
-{%block navbar%} {%include 'navbar.html'%} {%endblock%} 
-<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')}}">
-	{% block title %}{% endblock %}
+{% extends 'bootstrap/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Welcome to PitchFactory</title>
+    {% endif %}
 </head>
 <body>
-	{% block content %}
-	{% endblock%}
-</body>
-</html>
+    <!-- Navbar block  -->
+    {% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
 
-<!--navbar block -->
+    <!-- Content Block -->
+    {% block content %}
+    
+    {% endblock %}
+</body
+

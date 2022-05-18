@@ -6,9 +6,9 @@ from ..models import Notes
 from .. import db
 from . import main
 
-import app
 
-@main.route('/notes',methods=["POST","GET"])
+
+@main.route('/',methods=["POST","GET"])
 def notes():
 	if request.method == "POST":
 		task_content = request.form['content']
@@ -22,7 +22,7 @@ def notes():
 
 	else:
 		tasks = Notes.query.order_by(Notes.date_added).all() # fetchisng all data
-		return render_template('/notes.html',title="Notes App",tasks=tasks)
+		return render_template('notes.html',title="Notes App",tasks=tasks)
 
 
 @main.route('/delete/<int:id>')
@@ -45,7 +45,7 @@ def update(id):
 		task.task = request.form['content']
 		try:
 			db.session.commit()
-			return redirect('/notes')
+			return redirect('/')
 		except:
 			return "There was a problem updating your task"
 
