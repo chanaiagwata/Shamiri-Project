@@ -1,0 +1,35 @@
+body{
+    margin:0;
+    font-family: sans-serif;
+}
+
+.content{
+    width:600px;
+    height:auto;
+    margin: 0 auto;
+
+}
+.headline{
+    text-align:center;
+    font-family: "Ubuntu",sans-serif;
+}
+table th{
+    background-color: rgb(162, 162, 167);
+    color: white; 
+    padding: 20px;
+
+}
+table td{
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.update_task{
+	margin-left: 100px;
+}
+.update_task #content{
+	width: 300px;
+}
+a{
+	text-decoration: none;
+}
