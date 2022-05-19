@@ -40,10 +40,7 @@ class Notes(db.Model):
     task = db.Column(db.String(255),nullable=False)
     date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
-	#create string
 
-    def __repr__(self):
-        return '<Task %r>'%self.id
 	
 
     

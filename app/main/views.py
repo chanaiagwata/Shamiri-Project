@@ -6,8 +6,6 @@ from ..models import Notes
 from .. import db
 from . import main
 
-
-
 @main.route('/',methods=["POST","GET"])
 def notes():
 	if request.method == "POST":

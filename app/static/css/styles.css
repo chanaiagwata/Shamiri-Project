@@ -2,6 +2,9 @@ body{
     margin:0;
     font-family: sans-serif;
 }
+.banner{
+    background-image:url('/static/images/shamiri0.jpg');  
+}
 
 .content{
     width:600px;
